@@ -103,4 +103,6 @@ The bootstrap CI tells you how much to trust the point estimate. The null test t
 
 ## Citation
 
-> Salazar, L. A. (2026). *Temporal-Information Universalism: An Intrinsic Computational Ontology with Preliminary Empirical Analysis.* Version 4.0.
+> Salazar, L. A. (2026). Evidence for Nonlinear Density-Dependent ISW Signal in Cosmic Voids Using DESI DR1 and Planck Data. Independent Researcher.
+
+> Salazar, L. A. (2026). A Density-Dependent Gravitational Framework: Temporal Asymmetry, Information Costs, and the Void-ISW Anomaly. Independent Researcher.
