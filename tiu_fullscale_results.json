@@ -22,7 +22,7 @@
     "f_stat": 13.875790840397212,
     "f_pval": 0.013641029035732721,
     "eta_estimate": 0.6439684798208312,
-    "verdict": "STRONG evidence for nonlinearity \u2192 SUPPORTS TIU"
+    "verdict": "STRONG evidence for nonlinearity \u2192 SUPPORTS NONLINEAR MODEL"
   },
   "bootstrap": {
     "mean": 6.511017823919774,

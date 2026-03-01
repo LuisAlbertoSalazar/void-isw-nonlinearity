@@ -1,5 +1,5 @@
 ========================================================================
-  TIU FULL-SCALE EMPIRICAL TEST - COMPREHENSIVE RESULTS
+  NONLINEAR ISW VOID TEST - COMPREHENSIVE RESULTS
 ========================================================================
 
 Date:                2026-02-28 11:52:12
@@ -21,7 +21,7 @@ Correlation r:       0.034449
 Correlation p:       6.096763e-01
 η estimate:          0.6440
 
-VERDICT: STRONG evidence for nonlinearity → SUPPORTS TIU
+VERDICT: STRONG evidence for nonlinearity → SUPPORTS NONLINEAR MODEL
 
 --------------------------------------------------
 BOOTSTRAP CONFIDENCE INTERVAL

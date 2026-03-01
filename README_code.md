@@ -1,4 +1,4 @@
-# TIU Full-Scale Empirical Test v3.0
+# Nonlinear ISW Void Test v3.0
 
 **Author:** Luis Alberto Salazar  
 **Date:** February 2026  
@@ -93,8 +93,8 @@ tiu_research/
 
 | ΔBIC | Meaning |
 |------|---------|
-| > 6 | Strong evidence for TIU nonlinearity |
-| 2 to 6 | Moderate evidence for TIU |
+| > 6 | Strong evidence for nonlinear model |
+| 2 to 6 | Moderate evidence for nonlinear model |
 | −2 to 2 | Inconclusive |
 | −6 to −2 | Moderate evidence for ΛCDM linearity |
 | < −6 | Strong evidence for ΛCDM |

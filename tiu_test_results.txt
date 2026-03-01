@@ -1,4 +1,4 @@
-TIU NONLINEARITY TEST RESULTS
+NONLINEAR ISW VOID TEST RESULTS
 ==================================================
 
 Date:              2026-02-28 11:52:12
@@ -13,7 +13,7 @@ Delta-BIC:         6.5533
 Correlation r:     0.034449
 Correlation p:     6.096763e-01
 
-VERDICT: STRONG evidence for nonlinearity → SUPPORTS TIU
+VERDICT: STRONG evidence for nonlinearity → SUPPORTS NONLINEAR MODEL
 
 BINNED DATA:
        delta       T (uK)        error

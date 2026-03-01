@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ================================================================================
-TEMPORAL-INFORMATION UNIVERSALISM (TIU) — FULL-SCALE EMPIRICAL TEST
+NONLINEAR DENSITY-DEPENDENT ISW SIGNAL IN COSMIC VOIDS — FULL-SCALE TEST
 ================================================================================
 Version: 3.0 (Full DESI DR1 — Async TAP, Batched Queries, Robustness Suite)
 
@@ -10,11 +10,11 @@ Date:    February 28, 2026
 License: CC BY 4.0
 
 PURPOSE:
-    Test TIU Prediction #2: Do cosmic voids show a NONLINEAR relationship
-    between emptiness and ISW-like CMB signal anomalies?
+    Test whether cosmic voids show a NONLINEAR relationship between
+    density contrast and ISW-like CMB temperature signal.
 
     - LCDM predicts:  T ∝ δ            (linear)
-    - TIU predicts:   T ∝ δ + δ²       (quadratic / nonlinear)
+    - Nonlinear:      T ∝ δ + ηδ²      (quadratic / density-dependent)
 
 DATA SOURCES (all public, no account required):
     - Planck PR3 SMICA CMB temperature map (IRSA)
@@ -638,7 +638,7 @@ def fit_models(delta, temp_uk, n_bins=8):
     n = len(bc)
     bic_lin = lx + 2 * np.log(n)
     bic_quad = qx + 3 * np.log(n)
-    delta_bic = bic_lin - bic_quad  # positive favors TIU
+    delta_bic = bic_lin - bic_quad  # positive favors nonlinear model
 
     # Correlation on unbinned data
     r_val, p_val = stats.pearsonr(delta, temp_uk)
@@ -671,9 +671,9 @@ def fit_models(delta, temp_uk, n_bins=8):
 
 def get_verdict(delta_bic):
     if delta_bic > 6:
-        return "STRONG evidence for nonlinearity → SUPPORTS TIU"
+        return "STRONG evidence for nonlinearity → SUPPORTS NONLINEAR MODEL"
     elif delta_bic > 2:
-        return "MODERATE evidence for nonlinearity → LEANS TIU"
+        return "MODERATE evidence for nonlinearity → LEANS NONLINEAR"
     elif delta_bic > -2:
         return "INCONCLUSIVE"
     elif delta_bic > -6:
@@ -976,7 +976,7 @@ def make_plots(primary_result, bootstrap, jackknife, null_test_result,
     ax1.plot(sx, np.polyval(r["linear_coeffs"], sx), "--", color="#E74C3C",
              lw=2, label=r"Linear ($\Lambda$CDM)")
     ax1.plot(sx, np.polyval(r["quad_coeffs"], sx), "-", color="#2ECC71",
-             lw=2, label="Quadratic (TIU)")
+             lw=2, label="Quadratic (nonlinear)")
     ax1.set_xlabel(r"Void Density Contrast ($\delta$)")
     ax1.set_ylabel(r"Mean CMB Temperature ($\mu$K)")
     ax1.set_title(f"Primary Result: ΔBIC = {r['delta_bic']:.2f}\n"
@@ -1128,7 +1128,7 @@ def make_plots(primary_result, bootstrap, jackknife, null_test_result,
 
     # Title
     fig.suptitle(
-        f"TIU Full-Scale Empirical Test — {r['n_voids']} Voids from {DESI_MAX_ROWS:,} Galaxies\n"
+        f"Nonlinear ISW Void Test — {r['n_voids']} Voids from {DESI_MAX_ROWS:,} Galaxies\n"
         f"Primary ΔBIC = {r['delta_bic']:.2f} | {get_verdict(r['delta_bic'])}",
         fontsize=14, fontweight="bold", y=0.98
     )
@@ -1145,10 +1145,10 @@ def make_plots(primary_result, bootstrap, jackknife, null_test_result,
     axes[0].plot(sx, np.polyval(r["linear_coeffs"], sx), "--", color="#E74C3C",
                  lw=2, label=r"Linear ($\Lambda$CDM)")
     axes[0].plot(sx, np.polyval(r["quad_coeffs"], sx), "-", color="#2ECC71",
-                 lw=2, label="Quadratic (TIU)")
+                 lw=2, label="Quadratic (nonlinear)")
     axes[0].set_xlabel(r"Void Density Contrast ($\delta$)", fontsize=12)
     axes[0].set_ylabel(r"Mean CMB Temperature ($\mu$K)", fontsize=12)
-    axes[0].set_title("TIU Prediction Test:\nVoid Density vs CMB Temperature",
+    axes[0].set_title("Nonlinearity Test:\nVoid Density vs CMB Temperature",
                       fontsize=13, fontweight="bold")
     axes[0].legend(fontsize=11)
     axes[0].grid(alpha=0.3)
@@ -1187,7 +1187,7 @@ def save_results(primary, bootstrap, jackknife, null_result,
     txt_path = os.path.join(RESULTS_DIR, "tiu_fullscale_results.txt")
     with open(txt_path, "w", encoding="utf-8") as f:
         f.write("=" * 72 + "\n")
-        f.write("  TIU FULL-SCALE EMPIRICAL TEST - COMPREHENSIVE RESULTS\n")
+        f.write("  NONLINEAR ISW VOID TEST - COMPREHENSIVE RESULTS\n")
         f.write("=" * 72 + "\n\n")
         f.write(f"Date:                {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"Script version:      3.0\n")
@@ -1323,7 +1323,7 @@ def save_results(primary, bootstrap, jackknife, null_result,
     # Also save backward-compatible simple results
     simple_path = os.path.join(RESULTS_DIR, "tiu_test_results.txt")
     with open(simple_path, "w", encoding="utf-8") as f:
-        f.write("TIU NONLINEARITY TEST RESULTS\n")
+        f.write("NONLINEAR ISW VOID TEST RESULTS\n")
         f.write("=" * 50 + "\n\n")
         f.write(f"Date:              {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"Voids analyzed:    {r['n_voids']}\n")
@@ -1352,12 +1352,12 @@ def save_results(primary, bootstrap, jackknife, null_result,
 def main():
     start_time = time.time()
 
-    banner("TIU FULL-SCALE EMPIRICAL TEST v3.0")
+    banner("NONLINEAR ISW VOID TEST v3.0")
     print(f"  Target galaxies:  {DESI_MAX_ROWS:,}")
     print(f"  Quick mode:       {QUICK_MODE}")
     print(f"  Working dir:      {WORK_DIR}")
     print(f"  ΛCDM predicts:    T ∝ δ            (linear)")
-    print(f"  TIU  predicts:    T ∝ δ + δ²       (quadratic)")
+    print(f"  Nonlinear predicts:    T ∝ δ + δ²       (quadratic)")
     print()
 
     # ---- Phase 1: Planck ----
@@ -1395,7 +1395,7 @@ def main():
         return
 
     # ---- Phase 5: Primary Analysis ----
-    banner("PHASE 5: Primary Analysis — ΛCDM vs TIU")
+    banner("PHASE 5: Primary Analysis — Linear vs Nonlinear")
     primary = fit_models(rd, rt * 1e6)
     if not primary:
         log("Model fitting failed.", "ERROR")
