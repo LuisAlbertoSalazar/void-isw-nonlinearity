@@ -1,78 +1,70 @@
-# Nonlinear Density-Dependent ISW Signal in Cosmic Voids
+# Search for Nonlinear ISW-Void Coupling in DESI DR1
 
-**Author:** Luis Alberto Salazar, Independent Researcher
-**Contact:** lasalazar@alum.mit.edu
-**Date:** February 2026
-**License:** CC BY 4.0
+**Result: Non-detection.** A marginal nonlinear component exists but does not reach significance under calibrated statistical methods.
 
-## Summary
+## What this is
 
-This repository contains the complete research package for an empirical test of nonlinear density-dependent scaling in the integrated Sachs-Wolfe (ISW) signal of cosmic voids, using 2,891,109 galaxies from DESI Data Release 1 and the Planck PR3 SMICA CMB temperature map.
+A search for nonlinear scaling in the relationship between cosmic void density contrast and the integrated Sachs-Wolfe (ISW) CMB temperature signal, using 2.89 million DESI DR1 spectroscopic galaxies (z = 0.4–0.8) and the Planck PR3 SMICA CMB map.
 
-The results presented in this package were generated from a full-scale query of the DESI DR1 and Planck archives performed on February 28, 2026.
+## Key results
 
-### Key Result
+| Test | Result |
+|------|--------|
+| Binned ΔBIC (8 bins) | 6.55 — **but method has 14.5% false positive rate** |
+| Unbinned ΔBIC | 0.62 — not significant |
+| Unbinned F-test | p = 0.015 — nominally significant |
+| Density-shuffle z-score | 3.38 (p = 0.016) — nonlinearity tied to real density ordering |
+| Mock CMB calibration | No calibrated method (FPR < 5%) finds significance |
 
-| Metric | Value |
-|--------|-------|
-| Galaxies used | 2,891,109 |
-| Voids analyzed | 222 |
-| Delta-BIC | 6.55 (strong evidence for nonlinearity) |
-| F-test p-value | 0.014 |
-| Null-test z-score | 3.69 |
-| Eta estimate | 0.64 |
-| Jackknife stability | 4.19 - 6.55 across sky quadrants |
-| Bootstrap 95% CI | [-1.84, 22.96] |
+**Bottom line:** The data contain a weak nonlinear component that is genuinely tied to density ordering, but it does not survive properly calibrated statistical testing. This is a null result with an interesting methodological lesson about false-positive calibration in binned void-ISW analyses.
 
-## Repository Contents
+## Files
 
 ### Papers
+- `Salazar_2026_Nonlinear_ISW_Voids_Empirical_v2.docx` — Empirical analysis (v2.0, corrected)
+- `Salazar_2026_Density_Dependent_Gravitational_Framework_v2.docx` — Theoretical framework (v2.0, corrected)
 
-| File | Description |
-|------|-------------|
-| `Salazar_2026_Nonlinear_ISW_Voids_Empirical.docx` | Empirical paper presenting data analysis, results, and robustness tests |
-| `Salazar_2026_Density_Dependent_Gravitational_Framework.docx` | Framework paper presenting theoretical motivation grounded in GR and the holographic principle |
-
-### Code
-
-| File | Description |
-|------|-------------|
-| `tiu_empirical_test_fullscale.py` | Complete analysis pipeline (v3.0). Fully reproducible using only public data. |
-| `README_code.md` | Technical documentation for the analysis pipeline |
+### Analysis code
+- `tiu_empirical_test_fullscale.py` — Main pipeline: DESI DR1 query, void finding, CMB stacking, model comparison (v3.0)
+- `robustness_stress_tests.py` — Three stress tests: unbinned regression, density shuffle, mock ΛCDM CMB
+- `diagnose_binned_bias.py` — Nine-method false-positive calibration comparing binned, unbinned, CV, and F-test approaches
 
 ### Results
+- `stress_test_results.json` — Output from the three stress tests
+- `bias_diagnostic_results.json` — Output from the nine-method calibration
+- `CHANGELOG.md` — Version history
 
-| File | Description |
-|------|-------------|
-| `tiu_fullscale_results.txt` | Comprehensive text report |
-| `tiu_fullscale_results.json` | Machine-readable JSON with all diagnostics |
-| `tiu_test_results.txt` | Summary results |
+## How to reproduce
 
-## Reproducibility
-
-All results can be reproduced from scratch:
-
+**Step 1:** Run the main pipeline (requires internet for DESI TAP queries and Planck download, ~2-6 hours):
 ```bash
-pip install numpy matplotlib astropy scipy requests
 python tiu_empirical_test_fullscale.py
 ```
 
-Data sources (all public, no account required):
-- DESI DR1 (CC BY 4.0): https://datalab.noirlab.edu/
-- Planck PR3 SMICA: https://irsa.ipac.caltech.edu/
+**Step 2:** Run the stress tests (uses cached data from Step 1, ~30-60 min):
+```bash
+python robustness_stress_tests.py
+```
 
-## Citation
+**Step 3:** Run the bias diagnostic (uses cached data from Step 1, ~10-30 min):
+```bash
+python diagnose_binned_bias.py
+```
 
-> Salazar, L. A. (2026). Evidence for Nonlinear Density-Dependent ISW Signal in Cosmic Voids Using DESI DR1 and Planck Data. Independent Researcher.
+## Data sources
 
-> Salazar, L. A. (2026). A Density-Dependent Gravitational Framework: Temporal Asymmetry, Information Costs, and the Void-ISW Anomaly. Independent Researcher.
+- **DESI DR1**: NOIRLab Astro Data Lab TAP service, CC BY 4.0
+- **Planck PR3 SMICA**: IRSA Planck Archive
 
-## Acknowledgments
+## Version history
 
-This research uses data from the Astro Data Lab at NSF NOIRLab and the Planck Legacy Archive. DESI data is released under CC BY 4.0.
+- **v2.0 (March 2026):** Added stress tests, corrected statistical claims. See erratum in empirical paper Section 5.5.
+- **v1.0 (February 2026):** Initial release. Statistical claims now superseded by v2.0.
 
-## Contact
+## Author
 
-Luis Alberto Salazar
-Independent Researcher
-lasalazar@alum.mit.edu
+Luis Alberto Salazar — lasalazar@alum.mit.edu
+
+## License
+
+CC BY 4.0

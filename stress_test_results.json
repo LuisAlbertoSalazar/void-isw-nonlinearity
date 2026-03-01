@@ -1,0 +1,73 @@
+{
+  "date": "2026-03-01T12:46:41.131286",
+  "version": "1.0",
+  "reference_binned_delta_bic": 6.553304391931091,
+  "test1_unbinned_regression": {
+    "test": "unbinned_regression",
+    "n_voids": 222,
+    "delta_bic_unbinned": 0.6228484827054217,
+    "delta_aic_unbinned": 4.02552586457773,
+    "delta_bic_binned": 6.553304391931091,
+    "f_stat": 6.025502047615627,
+    "f_pval": 0.014880385178637323,
+    "r_value": 0.03444920328613848,
+    "p_value": 0.6096763305784224,
+    "r2_linear": 0.0011867476070493987,
+    "r2_quadratic": 0.027931944230167538,
+    "variance_reduction_pct": 2.6776974133094544,
+    "linear_coeffs": [
+      2.2208278504680212,
+      6.505353781853259
+    ],
+    "quad_coeffs": [
+      -84.56125112319064,
+      -130.12084585332062,
+      -43.11318896252863
+    ],
+    "verdict": "MARGINAL \u2014 Slight quadratic preference, but weak",
+    "passed": false
+  },
+  "test2_density_shuffle": {
+    "test": "density_shuffle",
+    "n_shuffles": 1000,
+    "real_delta_bic_unbinned": 0.6228484827054217,
+    "real_delta_bic_binned": 6.553304391931091,
+    "shuffle_mean_unbinned": -4.302033853591614,
+    "shuffle_std_unbinned": 1.4588316437547009,
+    "z_score_unbinned": 3.3759086302936976,
+    "p_value_unbinned": 0.016,
+    "shuffle_mean_binned": -0.836351779837205,
+    "shuffle_std_binned": 1.743107005318371,
+    "z_score_binned": 4.239358885726356,
+    "p_value_binned": 0.007,
+    "verdict": "PASS \u2014 Nonlinearity is tied to true \u03b4 ordering (unbinned)",
+    "passed": true
+  },
+  "test3_mock_cmb": {
+    "test": "mock_cmb",
+    "n_mocks": 100,
+    "nside_mock": 256,
+    "mean_voids_per_mock": 222.0,
+    "unbinned": {
+      "mean_delta_bic": -3.9110994417634664,
+      "std_delta_bic": 2.1071344147023625,
+      "frac_gt_0": 0.06,
+      "frac_gt_2": 0.03,
+      "frac_gt_6": 0.0
+    },
+    "binned": {
+      "mean_delta_bic": -0.4023192965660762,
+      "std_delta_bic": 2.324867464075677,
+      "frac_gt_0": 0.24,
+      "frac_gt_2": 0.11,
+      "frac_gt_6": 0.05
+    },
+    "verdict": "FAIL \u2014 Pipeline produces quadratic preference in >10% of null CMB mocks. Method has a built-in bias.",
+    "passed": false
+  },
+  "overall": {
+    "all_passed": false,
+    "tests_passed": 1,
+    "tests_total": 3
+  }
+}
