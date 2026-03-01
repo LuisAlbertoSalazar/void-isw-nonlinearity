@@ -1,0 +1,27 @@
+TIU NONLINEARITY TEST RESULTS
+==================================================
+
+Date:              2026-02-28 11:52:12
+Voids analyzed:    222
+Bins:              8
+
+Linear chi-sq:     11.7435
+Quadratic chi-sq:  3.1107
+BIC (linear):      15.9024
+BIC (quadratic):   9.3490
+Delta-BIC:         6.5533
+Correlation r:     0.034449
+Correlation p:     6.096763e-01
+
+VERDICT: STRONG evidence for nonlinearity → SUPPORTS TIU
+
+BINNED DATA:
+       delta       T (uK)        error
+     -0.9988       3.5413       1.7844
+     -0.9826       2.5912       1.7702
+     -0.9259       3.1136       1.9321
+     -0.8643       6.7565       1.8708
+     -0.7672       7.2000       2.0790
+     -0.6921       6.6571       1.9283
+     -0.6297       7.0100       1.8572
+     -0.5490       0.6135       1.9650

@@ -1,0 +1,100 @@
+========================================================================
+  TIU FULL-SCALE EMPIRICAL TEST - COMPREHENSIVE RESULTS
+========================================================================
+
+Date:                2026-02-28 11:52:12
+Script version:      3.0
+DESI galaxies:       18,700,000
+Voids analyzed:      222
+Bins:                8
+
+--------------------------------------------------
+PRIMARY RESULT
+--------------------------------------------------
+Linear chi-sq:       11.7435
+Quadratic chi-sq:    3.1107
+BIC (linear):        15.9024
+BIC (quadratic):     9.3490
+ΔBIC:                6.5533
+F-statistic:         13.8758 (p = 1.3641e-02)
+Correlation r:       0.034449
+Correlation p:       6.096763e-01
+η estimate:          0.6440
+
+VERDICT: STRONG evidence for nonlinearity → SUPPORTS TIU
+
+--------------------------------------------------
+BOOTSTRAP CONFIDENCE INTERVAL
+--------------------------------------------------
+Mean ΔBIC:           6.5110
+Median ΔBIC:         4.7446
+Std ΔBIC:            6.7608
+95% CI:              [-1.8412, 22.9581]
+P(ΔBIC > 0):         0.8730
+P(ΔBIC > 6):         0.4350
+
+--------------------------------------------------
+JACKKNIFE SPATIAL STABILITY
+--------------------------------------------------
+Excluding NE:      ΔBIC = 4.6304 (95 voids)
+Excluding NW:      ΔBIC = 4.4915 (136 voids)
+Excluding SE:      ΔBIC = 4.1947 (213 voids)
+Excluding SW:      ΔBIC = 6.5533 (222 voids)
+Jackknife range:     [4.1947, 6.5533]
+Jackknife std:       0.9290
+
+--------------------------------------------------
+NULL TEST (RANDOM POSITIONS)
+--------------------------------------------------
+Null ΔBIC mean:      -0.8440
+Null ΔBIC std:       2.0032
+Null r mean:         -0.0036
+Null r std:          0.0643
+Observed z-score:    3.6928
+N realizations:      200
+
+--------------------------------------------------
+PARAMETER SENSITIVITY
+--------------------------------------------------
+      void_threshold =   -0.3: ΔBIC =  12.1504 (271 voids)
+      void_threshold =   -0.4: ΔBIC =   8.2877 (249 voids)
+      void_threshold =   -0.5: ΔBIC =   6.5533 (222 voids)
+      void_threshold =   -0.6: ΔBIC =   0.0090 (193 voids)
+      void_threshold =   -0.7: ΔBIC =  -1.2859 (148 voids)
+          void_nside =      8: ΔBIC =   4.6264 (68 voids)
+          void_nside =     16: ΔBIC =   6.5533 (222 voids)
+          void_nside =     32: ΔBIC =   2.9344 (795 voids)
+        cmb_aperture =    3.0: ΔBIC =   8.7365 (222 voids)
+        cmb_aperture =    5.0: ΔBIC =   6.5533 (222 voids)
+        cmb_aperture =    7.0: ΔBIC =   2.7392 (222 voids)
+
+--------------------------------------------------
+REDSHIFT BIN ANALYSIS
+--------------------------------------------------
+z =   0.4-0.5: ΔBIC =  -1.4538 (169 voids, r = 0.0534)
+z =   0.5-0.6: ΔBIC =   6.6581 (213 voids, r = -0.0296)
+z =   0.6-0.7: ΔBIC =  -1.8245 (232 voids, r = -0.1228)
+z =   0.7-0.8: ΔBIC =  -1.6508 (233 voids, r = -0.1361)
+
+--------------------------------------------------
+POWER ANALYSIS
+--------------------------------------------------
+          voids_for_bic_2: 222
+          voids_for_bic_6: 222
+         voids_for_bic_10: 291
+          current_n_voids: 222
+        current_delta_bic: 6.553304391931091
+          signal_per_void: 0.053855773755871035
+
+--------------------------------------------------
+BINNED DATA
+--------------------------------------------------
+       delta       T (uK)        error    count
+     -0.9988       3.5413       1.7844       27
+     -0.9826       2.5912       1.7702       29
+     -0.9259       3.1136       1.9321       26
+     -0.8643       6.7565       1.8708       29
+     -0.7672       7.2000       2.0790       28
+     -0.6921       6.6571       1.9283       27
+     -0.6297       7.0100       1.8572       28
+     -0.5490       0.6135       1.9650       27

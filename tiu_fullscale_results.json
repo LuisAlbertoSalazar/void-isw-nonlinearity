@@ -1,0 +1,193 @@
+{
+  "date": "2026-02-28T11:52:12.255638",
+  "version": "3.0",
+  "config": {
+    "desi_max_rows": 18700000,
+    "z_range": [
+      0.4,
+      0.8
+    ],
+    "void_nside": 16,
+    "void_threshold": -0.5,
+    "cmb_aperture": 5.0,
+    "galactic_mask": 20.0
+  },
+  "primary": {
+    "n_voids": 222,
+    "delta_bic": 6.553304391931091,
+    "chi2_linear": 11.743468065742675,
+    "chi2_quad": 3.1107221321317504,
+    "r_value": 0.03444920328613848,
+    "p_value": 0.6096763305784224,
+    "f_stat": 13.875790840397212,
+    "f_pval": 0.013641029035732721,
+    "eta_estimate": 0.6439684798208312,
+    "verdict": "STRONG evidence for nonlinearity \u2192 SUPPORTS TIU"
+  },
+  "bootstrap": {
+    "mean": 6.511017823919774,
+    "median": 4.744590767844356,
+    "std": 6.760754477910839,
+    "ci_2.5": -1.8412316673117441,
+    "ci_97.5": 22.95805483271965,
+    "frac_positive": 0.873,
+    "frac_gt_6": 0.435
+  },
+  "jackknife": {
+    "NE": {
+      "delta_bic": 4.630426752374047,
+      "n_voids": 95
+    },
+    "NW": {
+      "delta_bic": 4.491472754990891,
+      "n_voids": 136
+    },
+    "SE": {
+      "delta_bic": 4.194707928595324,
+      "n_voids": 213
+    },
+    "SW": {
+      "delta_bic": 6.553304391931091,
+      "n_voids": 222
+    }
+  },
+  "null_test": {
+    "null_r_mean": -0.0036163854663898137,
+    "null_r_std": 0.06429118165127143,
+    "null_bic_mean": -0.8439763731909092,
+    "null_bic_std": 2.003181895480422,
+    "n_realizations": 200
+  },
+  "parameter_sweep": [
+    {
+      "param": "void_threshold",
+      "value": -0.3,
+      "delta_bic": 12.150383969374943,
+      "n_voids": 271,
+      "chi2_lin": 18.238937616428203,
+      "chi2_quad": 4.009112105373425
+    },
+    {
+      "param": "void_threshold",
+      "value": -0.4,
+      "delta_bic": 8.287706668258982,
+      "n_voids": 249,
+      "chi2_lin": 12.790744552790674,
+      "chi2_quad": 2.423596342851857
+    },
+    {
+      "param": "void_threshold",
+      "value": -0.5,
+      "delta_bic": 6.553304391931091,
+      "n_voids": 222,
+      "chi2_lin": 11.743468065742675,
+      "chi2_quad": 3.1107221321317504
+    },
+    {
+      "param": "void_threshold",
+      "value": -0.6,
+      "delta_bic": 0.008966048177088126,
+      "n_voids": 193,
+      "chi2_lin": 4.249204665341611,
+      "chi2_quad": 2.1607970754846866
+    },
+    {
+      "param": "void_threshold",
+      "value": -0.7,
+      "delta_bic": -1.2859047532371601,
+      "n_voids": 148,
+      "chi2_lin": 6.194746604324144,
+      "chi2_quad": 5.40120981588147
+    },
+    {
+      "param": "void_nside",
+      "value": 8,
+      "delta_bic": 4.626352090464813,
+      "n_voids": 68,
+      "chi2_lin": 11.488347402479878,
+      "chi2_quad": 4.78255377033523
+    },
+    {
+      "param": "void_nside",
+      "value": 16,
+      "delta_bic": 6.553304391931091,
+      "n_voids": 222,
+      "chi2_lin": 11.743468065742675,
+      "chi2_quad": 3.1107221321317504
+    },
+    {
+      "param": "void_nside",
+      "value": 32,
+      "delta_bic": 2.9344228470450773,
+      "n_voids": 795,
+      "chi2_lin": 16.20687552654154,
+      "chi2_quad": 11.19301113781663
+    },
+    {
+      "param": "cmb_aperture",
+      "value": 3.0,
+      "delta_bic": 8.73645838168205,
+      "n_voids": 222,
+      "chi2_lin": 13.057211689543458,
+      "chi2_quad": 2.241311766181573
+    },
+    {
+      "param": "cmb_aperture",
+      "value": 5.0,
+      "delta_bic": 6.553304391931091,
+      "n_voids": 222,
+      "chi2_lin": 11.743468065742675,
+      "chi2_quad": 3.1107221321317504
+    },
+    {
+      "param": "cmb_aperture",
+      "value": 7.0,
+      "delta_bic": 2.7391851340090874,
+      "n_voids": 222,
+      "chi2_lin": 9.386001147311159,
+      "chi2_quad": 4.567374471622237
+    }
+  ],
+  "redshift_bins": [
+    {
+      "z_range": "0.4-0.5",
+      "n_galaxies": 869313,
+      "n_voids": 169,
+      "delta_bic": -1.4537808312402802,
+      "r_value": 0.05336660710994172,
+      "p_value": 0.49075516778888706
+    },
+    {
+      "z_range": "0.5-0.6",
+      "n_galaxies": 569280,
+      "n_voids": 213,
+      "delta_bic": 6.6581299680059125,
+      "r_value": -0.029569789236561277,
+      "p_value": 0.6678422676653879
+    },
+    {
+      "z_range": "0.6-0.7",
+      "n_galaxies": 586421,
+      "n_voids": 232,
+      "delta_bic": -1.8244861469585194,
+      "r_value": -0.12281982495483484,
+      "p_value": 0.06180269639043938
+    },
+    {
+      "z_range": "0.7-0.8",
+      "n_galaxies": 866095,
+      "n_voids": 233,
+      "delta_bic": -1.6507586248854125,
+      "r_value": -0.13613784261931727,
+      "p_value": 0.03784260548972386
+    }
+  ],
+  "power_analysis": {
+    "voids_for_bic_2": 222,
+    "voids_for_bic_6": 222,
+    "voids_for_bic_10": 291,
+    "current_n_voids": 222,
+    "current_delta_bic": 6.553304391931091,
+    "signal_per_void": 0.053855773755871035
+  }
+}
